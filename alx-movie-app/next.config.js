@@ -1,7 +1,15 @@
-/** @type {import('next').NextConfig} */
+import { NextConfig } from "next";
+import withPWAInit from "next-pwa";
+
+const withPWA = withPWAInit({
+  dest: "public",
+});
+
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-}
+  images: {
+    domains: ["m.media-amazon.com"],
+  },
+};
 
-module.exports = nextConfig
+export default withPWA(nextConfig);

@@ -1,4 +1,3 @@
-import { NextConfig } from "next";
 import withPWAInit from "next-pwa";
 
 const withPWA = withPWAInit({
@@ -9,6 +8,11 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["m.media-amazon.com"],
+  },
+  output: "export",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
   },
 };
 
